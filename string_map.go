@@ -16,6 +16,14 @@ func NewStirngMap(valueSorter func(v1, v2 interface{}) bool) *StringMap {
 	}
 }
 
+// isEmpty 空判定
+func (m *StringMap) isEmpty() bool {
+	if len(m.Items) == 0 {
+		return true
+	}
+	return false
+}
+
 // Keys キー一覧を取得
 func (m *StringMap) Keys() []string {
 	keys := make([]string, 0, len(m.Items))

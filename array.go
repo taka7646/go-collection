@@ -2,6 +2,7 @@ package collection
 
 import "sort"
 
+// Array 配列
 type Array struct {
 	Items []interface{}
 }
@@ -9,6 +10,14 @@ type Array struct {
 // Append 値の追加
 func (m *Array) Append(value interface{}) {
 	m.Items = append(m.Items, value)
+}
+
+// isEmpty 空判定
+func (m *Array) isEmpty() bool {
+	if len(m.Items) == 0 {
+		return true
+	}
+	return false
 }
 
 // Sort ソート
